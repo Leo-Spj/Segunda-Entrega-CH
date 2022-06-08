@@ -64,7 +64,7 @@ body{
     height: 35px;
     border-radius: 6px;
     font-size: 15px;
-    padding: 1rem;
+    padding-left: 8px;
 }
 
 .input_id{
@@ -72,17 +72,14 @@ body{
 }
 
 
-
-
 .formulario_cuerpo_boton-registro{
     height: 60px;
 
     display: flex;
     align-items: center;
-    justify-content: center;
-
-    
+    justify-content: center;    
 }
+
 .boton_formulario{
     background-color: rgb(64, 164
     , 0);
