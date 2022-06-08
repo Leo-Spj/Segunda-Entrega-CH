@@ -11,9 +11,8 @@ class alumnos_lista {
 const alumno = [ ];
 
 // alumnos de ejemplo dentro del array
-
-
-
+alumno.push(new alumnos_lista (12312312, "Leonardo", "Espejo"));
+alumno.push(new alumnos_lista (23423423, "Claudia", "Guitton"));
 
 
 const input_nombre = document.querySelector(".input_nombre");
@@ -84,6 +83,57 @@ boton_formulario.onclick = function(){
     
             quitar_html_alumno.remove()
         }
+
+
+}
+
+
+for (let i=0; i<alumno.length; i++){
+
+    datos_alumno = alumno[i];
+
+    agregar_alumno_tabla(datos_alumno, i);
+
+
+
+}
+
+function agregar_alumno_tabla(datos_alumno, i){
+
+    datos_alumno
+
+    let tr = document.createElement("tr");
+
+    let identificacion = alumno[i].id;
+
+    tr.setAttribute("id", identificacion+"-id")
+
+    alumnos_impresos.appendChild( tr )
+
+
+    tr.innerHTML = `
+    <td>  ${alumno[i].id}  </td>
+    <td>  ${alumno[i].nombre}  </td>
+    <td>  ${alumno[i].apellido}  </td>
+    
+    <td>
+    <button class="boton_lista" id="${alumno[i].id}">X</button>
+    </td>
+    ` ;
+
+    let eliminar_alumno = document.getElementById(identificacion);
+
+    let quitar_html_alumno = document.getElementById(identificacion+"-id")
+
+    eliminar_alumno.onclick = function(){
+
+
+        posicion = alumno.findIndex(x => x.id === identificacion)
+
+        alumno.splice(posicion, 1)
+
+        quitar_html_alumno.remove()
+    }
 
 
 }
