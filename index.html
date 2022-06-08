@@ -27,11 +27,11 @@
         
     <div class="formulario_cuerpo">
 
-        <input id="input_nombre"  class="input_nombre imput" type="text" placeholder="   Nombre">
+        <input id="input_nombre"  class="input_nombre imput" type="text" placeholder="Nombre">
 
-        <input id="input_apellido" class="input_apellido imput" type="text" placeholder="   Apellido">
+        <input id="input_apellido" class="input_apellido imput" type="text" placeholder="Apellido">
 
-        <input id="input_id" class="input_id imput" type="number" placeholder="   Documento de Identidad">
+        <input id="input_id" class="input_id imput" type="number" placeholder="Documento de Identidad">
         
     </div>
     
@@ -45,7 +45,7 @@
 
 
 
-    <section class="lista_alumnos">
+    <section  id="lista_alumnos_seccion" class="lista_alumnos">
 
         <div class="formulario_cabecera">
             <h2>Lista de alumnos</h2>
@@ -53,23 +53,31 @@
 
         
 
-      
-             <table class="tabla" border="1" cellpadding="1" cellspacing="0">
+      <section id="tabla_contenido">
 
+
+        <table id="tabla" class="tabla" border="1" cellpadding="1" cellspacing="0" >
+
+            
+            <thead>
                 <tr>
                     <th class="columna_id">ID</th>
                     <th class="columna_nombre">NOMBRE</th>
                     <th class="columna_apellido">APELLIDO</th>
                 </tr>
-               
+            </thead>
+            <tbody id="alumnos_impresos">
 
+                    <!-- aquí estarán los alumnos -->
+
+            </tbody>
           
 
+        </table>
+        
 
-            </table>
-
-
-
+      </section>
+         
     </section>
   
 

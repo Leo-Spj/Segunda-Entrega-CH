@@ -64,6 +64,7 @@ body{
     height: 35px;
     border-radius: 6px;
     font-size: 15px;
+    padding: 1rem;
 }
 
 .input_id{
@@ -124,6 +125,8 @@ body{
     
     margin-left: auto;
     margin-right: auto;
+
+    
 }
 .columna_id{
     width: 75px;
