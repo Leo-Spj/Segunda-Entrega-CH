@@ -112,6 +112,8 @@ boton_formulario.onclick = function(){
 
 }
 
+// Esta funcion imprime alumnos de prueba, no activar 
+// imprimir_datos() 
 function imprimir_datos(){
 
     for (let i=0; i<alumno.length; i++){
@@ -167,7 +169,7 @@ function imprimir_datos(){
 
 }
 
-imprimir_datos() 
+
 
   
 
