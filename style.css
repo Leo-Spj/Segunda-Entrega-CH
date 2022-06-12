@@ -137,7 +137,10 @@ body{
 .columna_apellido{
     width: 110px;
 }
-
+.columna_aliminar{
+    width: 20px;
+    border: none;
+}
 .boton_lista{
     background-color: rgb(185, 74, 72);
     color: rgb(255, 255, 255);
