@@ -27,7 +27,7 @@ function obtener_localStorage(){
         let alumno_guardado = JSON.parse( sessionStorage.getItem("alumno-"+i) );
 
         alumno.push(new alumnos_lista(alumno_guardado.id, alumno_guardado.nombre, alumno_guardado.apellido));
-        }
+    }
     
 
 }
@@ -58,6 +58,28 @@ boton_formulario.onclick = function(){
     alumno.push(new alumnos_lista(numeroId, input_nombre, input_apellido));
 
 
+    // validar datos:
+    let longitud_session = sessionStorage.length;
+    if(longitud_session == 0){
+        pase = true;
+    } else for(i = 0; i < longitud_session; i++){
+        
+        let buscador = JSON.parse( sessionStorage.getItem("alumno-"+i) );
+        let encontrar = buscador.id;
+       
+
+        if(encontrar == numeroId){
+            alert("ID repetido.\nCorrige o elimina")
+            pase = false
+            break
+        }else{
+            pase = true
+        }
+    }
+    
+
+    if(pase == true){
+
     // obtener la longitud del array
     let long = alumno.length;
     let leer_ultimo_agregado = long-1
@@ -86,29 +108,31 @@ boton_formulario.onclick = function(){
         </td>
         ` ;
 
-        let identificacion = alumno[leer_ultimo_agregado].id;
+    let identificacion = alumno[leer_ultimo_agregado].id;
 
-        let eliminar_alumno = document.getElementById(identificacion);
-        
-        let quitar_html_alumno = document.getElementById(identificacion+"-id")
+    let eliminar_alumno = document.getElementById(identificacion);
     
+    let quitar_html_alumno = document.getElementById(identificacion+"-id")
+
+    almacenamiento_local()
+
+    eliminar_alumno.onclick = function(){         
+        posicion = alumno.findIndex(x => x.id === identificacion)
+
+        alumno.splice(posicion, 1)
+
+        quitar_html_alumno.remove()
+
+        // JSON
         almacenamiento_local()
 
-        eliminar_alumno.onclick = function(){         
-            posicion = alumno.findIndex(x => x.id === identificacion)
-    
-            alumno.splice(posicion, 1)
-    
-            quitar_html_alumno.remove()
+        
+    }
+    }else{
+        alert("no escribe html")
+    }
 
-            // JSON
-            almacenamiento_local()
-
-            
-        }
-
-        // JSON, tambien hay una afuera de este evento
-       
+   
 
 }
 
@@ -163,7 +187,6 @@ function imprimir_datos(){
             almacenamiento_local()
         }
     
-
     }
 
 }
@@ -173,6 +196,7 @@ function imprimir_datos(){
   
 
 function almacenamiento_local(){
+   
    // JSON
    sessionStorage.clear()
 
