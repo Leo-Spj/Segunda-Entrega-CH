@@ -49,13 +49,13 @@ const alumnos_impresos = document.getElementById("alumnos_impresos");
 
 boton_formulario.onclick = function(){
     
-    let escuchar_nombre = document.getElementById("input_nombre").value
+    let input_nombre = document.getElementById("input_nombre").value
     let input_apellido = document.getElementById("input_apellido").value
     let input_id = document.getElementById("input_id").value
 
     numeroId = parseFloat(input_id);
 
-    alumno.push(new alumnos_lista(numeroId, escuchar_nombre, input_apellido));
+    alumno.push(new alumnos_lista(numeroId, input_nombre, input_apellido));
 
 
     // obtener la longitud del array
@@ -112,8 +112,7 @@ boton_formulario.onclick = function(){
 
 }
 
-// Esta funcion imprime alumnos de prueba, no activar 
-// imprimir_datos() 
+imprimir_datos() 
 function imprimir_datos(){
 
     for (let i=0; i<alumno.length; i++){
