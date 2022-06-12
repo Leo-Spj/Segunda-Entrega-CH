@@ -70,6 +70,9 @@ boton_formulario.onclick = function(){
 
         if(encontrar == numeroId){
             alert("ID repetido.\nCorrige o elimina")
+
+            
+
             pase = false
             break
         }else{
@@ -129,7 +132,15 @@ boton_formulario.onclick = function(){
         
     }
     }else{
-        alert("no escribe html")
+        console.log("no escribe html")
+        // elimiar ultimo alumno del Storage:
+        // agrego y luego quito
+        almacenamiento_local()
+        let numero = sessionStorage.length-1;            
+        sessionStorage.removeItem("alumno-"+numero);
+
+        // elinar del array:
+        alumno.pop();
     }
 
    
