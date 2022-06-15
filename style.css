@@ -129,13 +129,13 @@ body{
     
 }
 .columna_id{
-    width: 75px;
+    width: 80px;
 }
 .columna_nombre{
-    width: 100px;
+    width: 110px;
 }
 .columna_apellido{
-    width: 110px;
+    width: 120px;
 }
 .columna_aliminar{
     width: 20px;

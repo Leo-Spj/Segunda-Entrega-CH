@@ -15,11 +15,23 @@ const alumno = [ ];
  alumno.push(new alumnos_lista (12312312, "Leonardo", "Espejo"));
  alumno.push(new alumnos_lista (23423423, "Claudia", "Guitton"));
  * 
- */
+*/
+
+function almacenamiento_local(){
+// JSON
+sessionStorage.clear()
+
+    for(let i = 0; i < alumno.length; i++){
+        
+        
+        let alumno_json = ("alumno-"+i);
+
+        sessionStorage.setItem(alumno_json, JSON.stringify(alumno[i]))
+    }
+}
 
 // Obteniendo el LocalStorage y pasarlo a funcion para imprimir:
-
-function obtener_localStorage(){
+function obtener_sessionStorage(){
 
     let longitud_session = sessionStorage.length;
     for(i = 0; i < longitud_session; i++){
@@ -31,7 +43,7 @@ function obtener_localStorage(){
     
 
 }
-obtener_localStorage()
+obtener_sessionStorage()
 
 
 
@@ -69,9 +81,18 @@ boton_formulario.onclick = function(){
        
 
         if(encontrar == numeroId){
-            alert("ID repetido.\nCorrige o elimina")
+            // alert("ID repetido.\nCorrige o elimina")
 
-            
+            // Libreria JS, SweetAlert.
+
+             
+            Swal.fire({
+                icon: 'warning',
+                title: 'ID ya registrado',
+                text: 'Elimine o Modifique',
+                
+            })
+
 
             pase = false
             break
@@ -201,24 +222,3 @@ function imprimir_datos(){
     }
 
 }
-
-
-
-  
-
-function almacenamiento_local(){
-   
-   // JSON
-   sessionStorage.clear()
-
-    for(let i = 0; i < alumno.length; i++){
-        
-        
-        let alumno_json = ("alumno-"+i);
-
-        sessionStorage.setItem(alumno_json, JSON.stringify(alumno[i]))
-    }
-}
-
-
-
