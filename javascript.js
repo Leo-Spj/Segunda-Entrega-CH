@@ -8,13 +8,13 @@ const cargarPeliculas = async() => {
         //si la respuesta es correcta:
         if(respuesta.status === 200){
             const datos = await respuesta.json();
-            console.log (datos.results);
 
             datos.results.forEach(pelicula => {
-                console.log(pelicula.title)
+
+                arry_themoviedb.push(new informacion_peliculas(pelicula.title, pelicula.vote_average, pelicula.vote_count));
 
             });
-            
+            // tipos de errores:
         }else if(respuesta.status === 401){
             console.log ("llave erronea");
             
@@ -29,6 +29,23 @@ const cargarPeliculas = async() => {
     }
 }
 cargarPeliculas();
+
+const top_peliculas_tabla = document.querySelector("#top_peliculas_tabla");
+
+
+
+class informacion_peliculas {
+    
+    constructor (nombre, voto_promedio, recuento_votos ){
+        this.nombre = nombre;
+        this.voto_promedio = voto_promedio;
+        this.recuento_votos = recuento_votos;
+    }
+}
+const arry_themoviedb = [ ];
+
+
+
 class alumnos_lista {
 
     constructor (id, nombre, apellido ){
