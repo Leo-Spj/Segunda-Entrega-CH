@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="style.css">
 
     <title>Listas</title>
@@ -13,7 +14,7 @@
    <main>
 
     <div class="encabezado">
-        <h1 class="tutulo_logo">Alumnos</h1>
+        <h1 class="tutulo_logo">Coder.Play.House</h1>
     </div>
     
     
@@ -21,17 +22,17 @@
 
 
         <div class="formulario_cabecera">
-            <h2>Ingresar datos del alumno</h2>
+            <h2>Ingresar datos del jugador</h2>
         </div>
 
         
     <div class="formulario_cuerpo">
 
-        <input id="input_nombre"  class="input_nombre imput" type="text" placeholder="Nombre">
+        <input id="input_nombre"  class="input_nombre imput" type="text" placeholder="Nickname">
 
-        <input id="input_apellido" class="input_apellido imput" type="text" placeholder="Apellido">
+        <input id="input_apellido" class="input_apellido imput" type="text" placeholder="Team">
 
-        <input id="input_id" class="input_id imput" type="number" placeholder="Documento de Identidad">
+        <input id="input_id" class="input_id imput" type="number" placeholder="Codigo ID">
         
     </div>
     
@@ -48,7 +49,7 @@
     <section  id="lista_alumnos_seccion" class="lista_alumnos">
 
         <div class="formulario_cabecera">
-            <h2>Lista de alumnos</h2>
+            <h2>Lista de jugadores</h2>
         </div>
 
         
@@ -62,8 +63,8 @@
             <thead>
                 <tr>
                     <th class="columna_id">ID</th>
-                    <th class="columna_nombre">NOMBRE</th>
-                    <th class="columna_apellido">APELLIDO</th>
+                    <th class="columna_nombre">NICKNAME</th>
+                    <th class="columna_apellido">TEAM</th>
                     <th class="columna_aliminar"></th>
                 </tr>
             </thead>
@@ -81,7 +82,22 @@
          
     </section>
   
-
+    <section class="tabloide_1">
+        <div class="tabloide_1_encabezado">
+            <h2>SetTimeOut</h2>
+        </div>
+        
+        <div class="seccion3">
+            <button class="boton_seccion3">Cuenta Regresiva</button>
+        </div>
+            
+        <div class="cuenta_regresiva">
+            
+        </div>
+        
+        
+        
+    </section>
 
 
     <script src="javascript.js"></script>
@@ -89,5 +105,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
    </main>
+   <!-- bootstrap -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script> -->
 </body>
 </html>
