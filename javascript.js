@@ -1,4 +1,11 @@
 
+// fetch
+const cargarPeliculas = async() => {
+    const respuesta = await fetch(`https://api.themoviedb.org/3/movie/550?api_key=276e470698d68800db5697223acb8a64`);
+    console.log(respuesta);
+}
+cargarPeliculas();
+
 class alumnos_lista {
 
     constructor (id, nombre, apellido ){
@@ -19,7 +26,7 @@ const alumno = [ ];
 
 function almacenamiento_local(){
 // JSON
-    sessionStorage.clear()
+sessionStorage.clear()
 
     for(let i = 0; i < alumno.length; i++){
         
@@ -153,6 +160,7 @@ boton_formulario.onclick = function(){
         
     }
     }else{
+        console.log("no escribe html")
         // elimiar ultimo alumno del Storage:
         // agrego y luego quito
         almacenamiento_local()
@@ -221,87 +229,6 @@ function imprimir_datos(){
     }
 
 }
-
-
-
-
-// implementando settimeout
-
-const boton_seccion3 = document.querySelector(".boton_seccion3")
-
-let bloqueo = false;
-
-boton_seccion3.onclick = function(){   
-    
-    if (bloqueo){
-        
-        console.log("Esperar hasta que termine la cuenta regresiva")
-        return;
-
-    } else{
-
-        const cuenta_regresiva = document.querySelector(".cuenta_regresiva");
-
-        for(let i = 3; i >= 0; i--){
-            funcSegundero(i)
-        }
-
-        function funcSegundero(x){
-            setTimeout(() => {
-                const timeRegresivo= [3, 2, 1, 0];
-                cuenta_regresiva.innerHTML =`<p class="font_regresiva">${timeRegresivo[x]}</p>`
-            }, 1000*x);
-
-            bloqueo = true;
-        }
-
-        setTimeout(() => {
-            cuenta_regresiva.innerHTML =`<p> </p>`
-
-            bloqueo = false
-        }, 4000);
-
-    }
-}
-
-
-// fetch
-
-const cargarpeliculas = () => {
-    fetch(``)
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
