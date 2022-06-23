@@ -244,6 +244,11 @@ body{
 
     padding: 10px 16px;    
 }
+.subtitulo_tabloide_2{
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
 .fetch_api{
     height: 70px;
     width: auto;

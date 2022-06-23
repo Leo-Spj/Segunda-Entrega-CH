@@ -14,6 +14,20 @@ const cargarPeliculas = async() => {
                 arry_themoviedb.push(new informacion_peliculas(pelicula.title, pelicula.vote_average, pelicula.vote_count));
 
             });
+
+            // subiendo datos al html:
+            const top_peliculas_tabla = document.querySelector("#top_peliculas_tabla");
+            for(let i = 0; i < 10; i++ ){
+                let tr = document.createElement("tr");
+                top_peliculas_tabla.appendChild(tr);
+
+                tr.innerHTML = `
+                <td>  ${arry_themoviedb[i].nombre}  </td>
+                <td>  ${arry_themoviedb[i].voto_promedio}  </td>
+                <td>  ${arry_themoviedb[i].recuento_votos}  </td>
+                `;
+            }
+            
             // tipos de errores:
         }else if(respuesta.status === 401){
             console.log ("llave erronea");
@@ -29,9 +43,6 @@ const cargarPeliculas = async() => {
     }
 }
 cargarPeliculas();
-
-const top_peliculas_tabla = document.querySelector("#top_peliculas_tabla");
-
 
 
 class informacion_peliculas {
